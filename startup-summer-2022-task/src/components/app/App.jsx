@@ -6,6 +6,7 @@ import ShortMessage from '../short-message';
 import Loader from '../loader';
 
 import GithubApi from '../../services/github-api';
+import UserInfo from '../user-info';
 
 
 const GithubApiObj=new GithubApi();
@@ -18,7 +19,7 @@ export const App = () => {
     {icon:'icons/cross.svg', text:'Repository list is empty', alt:'cross icon'}
   ];
 
-  const [searchQuery, setSearchQuery]=useState('');
+  const [appSearchQuery, setAppSearchQuery]=useState('');
 
   const [userInfoLoading,setUserInfoLoading]=useState('');
   const [userInfo,setUserInfo]=useState('');
@@ -27,27 +28,37 @@ export const App = () => {
 
   const getSearchQuery=(nickname)=>{
     setUserInfoLoading('');
-    setSearchQuery(nickname);
+    setAppSearchQuery(nickname);
+  }
+
+  const getUserInfo= async ()=>{
+    let data = await GithubApiObj.getUser(appSearchQuery);
+    setUserInfoLoading(false);
+    if(!data){
+      setUserInfo(data);
+      return data;
+    }
+    const {login,following,followers,name,html_url,avatar_url}=data;
+    setUserInfo({login,following,followers,name,html_url,avatar_url});
+    return data;
   }
 
   useEffect(()=>{
-    if(searchQuery){
+    if(appSearchQuery){
       setUserInfoLoading(true);
-      GithubApiObj.getUser(searchQuery)
-      .then(data=>{
-        setUserInfo(data);
-        setUserInfoLoading(false);
-        return data;
-      })
+      getUserInfo()
     }
-  },[searchQuery])
+  },[appSearchQuery])
 
+ 
   return (
     <div className="app-grid">
-      <Header getSearchQuery={getSearchQuery} searchQuery={searchQuery}/>
+      <Header getSearchQuery={getSearchQuery} appSearchQuery={appSearchQuery}/>
       <main className='main'>
         {userInfoLoading==='' && reposInfoLoading===''  && <ShortMessage content={messageInfo[0]}/>}
         {userInfoLoading===true && <Loader/>}
+        {userInfoLoading===false && userInfo===false && <ShortMessage content={messageInfo[1]}/>}
+        {!userInfoLoading && userInfo && <UserInfo content={userInfo} />}
       </main>
     </div>
   );

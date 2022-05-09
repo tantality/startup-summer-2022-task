@@ -13,12 +13,11 @@ export const Header=(props)=>{
 
     const onKeyDown=(e)=>{
       let searchQueryTrimmed=searchQuery.trim();
-      if(e.key=='Enter' && props.searchQuery!==searchQueryTrimmed && searchQuery.length) {
+      if(e.key=='Enter' && props.appSearchQuery!==searchQueryTrimmed && searchQuery.length) {
         setSearchQuery(searchQueryTrimmed);
         props.getSearchQuery(searchQueryTrimmed);
       }
     }
-
 
     return (
       <header className="header">
@@ -35,6 +34,7 @@ export const Header=(props)=>{
                     value={searchQuery}
                     onChange={onSearchBarValueChange}
                     onKeyDown={onKeyDown}
+                    autoFocus={true}
                   />
                   <label htmlFor="search-bar" className='search-bar__icon'></label>
               </div>

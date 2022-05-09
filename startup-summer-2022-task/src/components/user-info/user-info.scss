@@ -1,0 +1,59 @@
+@mixin font($family, $style, $weight, $size, $line-height) {
+    font-family: $family;
+    font-style: $style;
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $line-height;
+}
+
+
+.user-info {
+    display: grid;
+    grid-template-rows: repeat(4, min-content);
+
+    .username__link {
+        @include font('Inter', normal, 400, 18px, 22px);
+        color: #0064EB;
+
+        &:hover {
+            color: #217BF4;
+        }
+    }
+
+
+    &__name {
+        margin-top: 28px;
+        @include font('Inter', normal, 600, 26px, 130%);
+        color: black;
+    }
+
+    &__username {
+        margin-top: 12px;
+        margin-bottom: 25px;
+    }
+
+    &__img {
+        border-radius: 50%;
+        width: 280px;
+    }
+
+    .additional {
+        display: flex;
+        column-gap: 16px;
+
+        &__followers,
+        &__following {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            column-gap: 8px;
+        }
+
+        .followers__icon,
+        .following__icon {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+}

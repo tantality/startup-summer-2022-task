@@ -3,11 +3,8 @@ export default class GithubApi {
 
   async getUser(name) {
     const res = await fetch(`${this._apiBaseUrl + '/users/' + name}`);
-    if (!res.ok) {
-      console.log(res.ok);
-      console.log(res.status);
-      return res.ok;
-    }
+    if (!res.ok) return res.ok;
+
     return await res.json();
   }
 }
