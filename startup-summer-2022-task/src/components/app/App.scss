@@ -1,13 +1,16 @@
 @import url('../../reset.scss');
 
 .app-grid {
+  height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto;
-  min-width: 100%;
+  grid-template-rows: auto 1fr;
   font-family: 'Inter', sans-serif;
 }
 
+.main {
+  background-color: #F9F9F9;
+}
 
 .container {
   margin: 0 auto;

@@ -2,17 +2,20 @@ import React,{useState} from 'react';
 
 import './header.scss';
 
-export const Header=()=>{
+
+export const Header=(props)=>{
 
     const [searchQuery, setSearchQuery]=useState('');
-  
+
     const onSearchBarValueChange=(e)=>{
       setSearchQuery(e.target.value);
     }
 
     const onKeyDown=(e)=>{
-      if(e.key=='Enter') {
-        //сделать запрос на получение данных
+      let searchQueryTrimmed=searchQuery.trim();
+      if(e.key=='Enter' && props.searchQuery!==searchQueryTrimmed && searchQuery.length) {
+        setSearchQuery(searchQueryTrimmed);
+        props.getSearchQuery(searchQueryTrimmed);
       }
     }
 
