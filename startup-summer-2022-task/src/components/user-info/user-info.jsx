@@ -20,18 +20,18 @@ export const UserInfo=(props)=>{
     return (
       <section className="user-info">
             <img className='user-info__img' src={avatar_url} alt={name} />
-            <div className="user-info__name">{name}</div>
+            <h2 className="user-info__name">{name}</h2>
             <div className="user-info__username username">
-              <a className='username__link' href={html_url} target="_blank">{login}</a>
+              <a className='username__link link' href={html_url} target="_blank" rel="noreferrer">{login}</a>
             </div>
             <div className="user-info__additional additional">
               <div className="additional__followers followers">
                 <img className='followers__icon' src={process.env.PUBLIC_URL + 'icons/followers.svg'} alt="followers-icon" />
-                <div className="followers__value">{getQuantity(followers)} followers</div>
+                <div className="text followers__text">{getQuantity(followers)} followers</div>
               </div>
               <div className="additional__following">
                 <img className='following__icon' src={process.env.PUBLIC_URL + 'icons/member.svg'} alt="member-icon" />
-                <div className="following__value">{getQuantity(following)} following</div>
+                <div className="text following__text">{getQuantity(following)} following</div>
               </div>
             </div>
       </section>

@@ -22,7 +22,7 @@ export const Header=(props)=>{
     return (
       <header className="header">
           <div className="container header__container">
-              <a href="https://github.com/" target="_blank">
+              <a href="https://github.com/" target="_blank" rel="noreferrer">
                 <img className='logo' src={process.env.PUBLIC_URL + 'icons/github-logo.svg'} alt="logo"/>
               </a>
               <div className="container__search-bar search-bar ">

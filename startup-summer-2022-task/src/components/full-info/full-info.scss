@@ -1,0 +1,25 @@
+.full-info {
+    height: 80%;
+
+    &__container {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: minmax(292px, 1fr) 3fr;
+        column-gap: 6.7%;
+        height: 100%;
+    }
+
+    .user-info {
+        margin-top: 10px;
+    }
+}
+
+
+@media (max-width:1310px) {
+    .full-info {
+        &__container {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+}

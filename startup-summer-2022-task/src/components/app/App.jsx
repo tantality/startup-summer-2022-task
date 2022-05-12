@@ -4,9 +4,9 @@ import './App.scss';
 import Header from '../header';
 import ShortMessage from '../short-message';
 import Loader from '../loader';
-
 import GithubApi from '../../services/github-api';
-import UserInfo from '../user-info';
+import FullInfo from '../full-info';
+import RepositoriesInfo from '../repositories-info';
 
 
 const GithubApiObj=new GithubApi();
@@ -23,8 +23,8 @@ export const App = () => {
 
   const [userInfoLoading,setUserInfoLoading]=useState('');
   const [userInfo,setUserInfo]=useState('');
-  const [reposInfoLoading,setreposInfoLoading]=useState('');
-  const [reposInfo,setreposInfo]=useState('');
+  const [reposInfoLoading,setReposInfoLoading]=useState('');
+  const [reposInfo,setReposInfo]=useState('');
 
   const getSearchQuery=(nickname)=>{
     setUserInfoLoading('');
@@ -32,6 +32,7 @@ export const App = () => {
   }
 
   const getUserInfo= async ()=>{
+    setUserInfoLoading(true);
     let data = await GithubApiObj.getUser(appSearchQuery);
     setUserInfoLoading(false);
     if(!data){
@@ -43,22 +44,37 @@ export const App = () => {
     return data;
   }
 
+  const getReposList= async ()=>{
+    setReposInfoLoading(true);
+    let data = await GithubApiObj.getReposList(appSearchQuery);
+    setReposInfoLoading(false);
+    if(!data.length){
+      setReposInfo(false);
+      return data;
+    }
+    setReposInfo(data);
+  }
+
   useEffect(()=>{
+    setReposInfo('');
     if(appSearchQuery){
-      setUserInfoLoading(true);
       getUserInfo()
+      .then(data=> {
+        if(data) getReposList();
+      })
     }
   },[appSearchQuery])
 
- 
   return (
     <div className="app-grid">
       <Header getSearchQuery={getSearchQuery} appSearchQuery={appSearchQuery}/>
       <main className='main'>
         {userInfoLoading==='' && reposInfoLoading===''  && <ShortMessage content={messageInfo[0]}/>}
-        {userInfoLoading===true && <Loader/>}
+        {userInfoLoading && <Loader/>}
         {userInfoLoading===false && userInfo===false && <ShortMessage content={messageInfo[1]}/>}
-        {!userInfoLoading && userInfo && <UserInfo content={userInfo} />}
+        {reposInfoLoading  && <FullInfo data={userInfo} right={<Loader/>}/>}
+        {reposInfo===false && reposInfoLoading===false && <FullInfo data={userInfo} right={<ShortMessage content={messageInfo[2]}/>} />}
+        {reposInfoLoading===false  && reposInfo && <FullInfo data={userInfo} right={<RepositoriesInfo data={reposInfo}/>}/>}
       </main>
     </div>
   );

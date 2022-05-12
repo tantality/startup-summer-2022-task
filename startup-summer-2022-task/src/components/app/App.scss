@@ -1,5 +1,15 @@
 @import url('../../reset.scss');
 
+$blue: #0064EB;
+
+@mixin font($family, $style, $weight, $size, $line-height) {
+  font-family: $family;
+  font-style: $style;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+}
+
 .app-grid {
   height: 100vh;
   display: grid;
@@ -16,4 +26,19 @@
   margin: 0 auto;
   max-width: 1255px;
   box-sizing: border-box;
+}
+
+
+.link {
+  color: $blue;
+
+  &:hover {
+    color: #217BF4;
+  }
+}
+
+
+.text {
+  @include font('Inter', normal, 400, 16px, 19px);
+  color: black;
 }

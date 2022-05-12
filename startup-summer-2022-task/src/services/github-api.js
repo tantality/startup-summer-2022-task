@@ -7,5 +7,10 @@ export default class GithubApi {
 
     return await res.json();
   }
+
+  async getReposList(name) {
+    const res = await fetch(`${this._apiBaseUrl + '/users/' + name + '/repos'}`);
+    return await res.json();
+  }
 }
 

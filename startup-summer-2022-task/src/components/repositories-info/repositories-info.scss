@@ -1,0 +1,44 @@
+$blue: #0064EB;
+
+@mixin font($family, $style, $weight, $size, $line-height) {
+    font-family: $family;
+    font-style: $style;
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $line-height;
+}
+
+.repositories-info {
+
+    &__container {
+        padding: 0;
+        display: flex;
+        row-gap: 29px;
+        flex-direction: column;
+    }
+
+    &__content {
+        display: grid;
+        row-gap: 24px;
+    }
+
+    &__title {
+        @include font('Inter', normal, 600, 32px, 130%);
+        color: black;
+    }
+
+    .repository {
+        background-color: white;
+        padding: 24px 32px;
+
+        &__link {
+            flex-grow: 0;
+            @include font('Inter', normal, 500, 24px, 29px);
+        }
+
+        &__description {
+            margin-top: 16px;
+        }
+    }
+
+}

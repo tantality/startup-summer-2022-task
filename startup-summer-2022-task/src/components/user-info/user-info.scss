@@ -6,6 +6,7 @@
     line-height: $line-height;
 }
 
+$blue: #0064EB;
 
 .user-info {
     display: grid;
@@ -13,11 +14,6 @@
 
     .username__link {
         @include font('Inter', normal, 400, 18px, 22px);
-        color: #0064EB;
-
-        &:hover {
-            color: #217BF4;
-        }
     }
 
 
@@ -47,6 +43,11 @@
             align-items: center;
             justify-content: flex-start;
             column-gap: 8px;
+        }
+
+        .followers__text,
+        .following__text {
+            line-height: 150%;
         }
 
         .followers__icon,
