@@ -2,136 +2,135 @@ $blue: #0064EB;
 $gray: #808080;
 
 @mixin font($family, $style, $weight, $size, $line-height) {
-    font-family: $family;
-    font-style: $style;
-    font-weight: $weight;
-    font-size: $size;
-    line-height: $line-height;
+  font-family: $family;
+  font-style: $style;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
 }
 
 .repositories-info {
-    .pagination {
-        margin-top: 24px;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        column-gap: 16px;
-        @include font('Inter', normal, 400, 14px, 21px);
-        color: $gray;
+  .pagination {
+    margin-top: 24px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 16px;
+    @include font('Inter', normal, 400, 14px, 21px);
+    color: $gray;
 
-        .control-panel {
-            display: flex;
-            column-gap: 12px;
-            align-items: center;
+    .control-panel {
+      display: flex;
+      column-gap: 12px;
+      align-items: center;
 
-            .break {
-                &__link {
-                    padding: 4px;
-                }
-            }
-
-            &__page {
-                display: block;
-                padding: 4px;
-
-                &:hover {
-                    cursor: pointer;
-                }
-
-                &_active {
-                    background-size: 100% 100%;
-                    background: $blue;
-                    border-radius: 3px;
-                    padding: 2px 6px;
-                    color: white;
-                }
-
-
-            }
-
-            .previous,
-            .next,
-            .break {
-                box-sizing: border-box;
-                cursor: pointer;
-                display: block;
-                width: auto;
-                height: auto;
-            }
-
-            .previous,
-            .next {
-                margin-top: 2px;
-
-                &__link {
-                    box-sizing: content-box;
-                    transform: rotate(-180deg);
-                    background-repeat: no-repeat;
-                    background-image: url('../../../public/icons/arrow-right.svg');
-                    background-size: 18px 18px;
-                    background-position: center;
-                    padding: 3px;
-                    display: block;
-                    width: 18px;
-                    height: 18px;
-                }
-
-                &:hover {
-                    filter: brightness(0) saturate(100%) invert(37%) sepia(83%) saturate(5573%) hue-rotate(204deg) brightness(92%) contrast(108%);
-                }
-            }
-
-            .next__link {
-                transform: rotate(0deg);
-            }
-
-            .disabled {
-                cursor: auto;
-
-                &:hover {
-                    filter: brightness(0) saturate(100%) invert(52%) sepia(7%) saturate(0%) hue-rotate(223deg) brightness(95%) contrast(88%);
-                }
-            }
-
+      .break {
+        &__link {
+          padding: 4px;
         }
-    }
+      }
+
+      &__page {
+        display: block;
+        padding: 4px;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        &_active {
+          background-size: 100% 100%;
+          background: $blue;
+          border-radius: 3px;
+          padding: 2px 6px;
+          color: white;
+        }
 
 
-    &__container {
-        padding: 0;
-        display: grid;
-        grid-template-rows: min-content auto min-content;
-    }
+      }
 
-    &__content {
-        display: grid;
-        row-gap: 24px;
-        grid-auto-flow: row;
-        grid-auto-rows: minmax(112px, max-content);
-        align-content: flex-start;
-        min-height: 540px;
+      .previous,
+      .next,
+      .break {
+        box-sizing: border-box;
+        cursor: pointer;
+        display: block;
+        width: auto;
+        height: auto;
+      }
+
+      .previous,
+      .next {
+        margin-top: 2px;
+
+        &__link {
+          box-sizing: content-box;
+          transform: rotate(-180deg);
+          background-repeat: no-repeat;
+          background-image: url('../../../public/icons/arrow-right.svg');
+          background-size: 18px 18px;
+          background-position: center;
+          padding: 3px;
+          display: block;
+          width: 18px;
+          height: 18px;
+        }
+
+        &:hover {
+          filter: brightness(0) saturate(100%) invert(37%) sepia(83%) saturate(5573%) hue-rotate(204deg) brightness(92%) contrast(108%);
+        }
+      }
+
+      .next__link {
+        transform: rotate(0deg);
+      }
+
+      .disabled {
+        cursor: auto;
+
+        &:hover {
+          filter: brightness(0) saturate(100%) invert(52%) sepia(7%) saturate(0%) hue-rotate(223deg) brightness(95%) contrast(88%);
+        }
+      }
+
     }
+  }
+
+
+  &__container {
+    padding: 0;
+    display: grid;
+    grid-template-rows: min-content auto min-content;
+  }
+
+  &__content {
+    display: grid;
+    row-gap: 24px;
+    grid-auto-flow: row;
+    grid-auto-rows: minmax(112px, max-content);
+    align-content: flex-start;
+    min-height: 540px;
+  }
+
+  &__title {
+    @include font('Inter', normal, 600, 32px, 130%);
+    color: black;
+    margin-bottom: 29px;
+  }
+
+  .repository {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    padding: 24px 32px;
 
     &__title {
-        @include font('Inter', normal, 600, 32px, 130%);
-        color: black;
-        margin-bottom: 29px;
+      @include font('Inter', normal, 500, 24px, 29px);
     }
 
-    .repository {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        background-color: white;
-        padding: 24px 32px;
-
-        &__title {
-            @include font('Inter', normal, 500, 24px, 29px);
-        }
-
-        &__description {
-            margin-top: 16px;
-        }
+    &__description {
+      margin-top: 16px;
     }
-
+  }
 }

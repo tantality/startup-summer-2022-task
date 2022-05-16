@@ -1,26 +1,26 @@
 .full-info {
+  height: 100%;
+
+  &__container {
+    padding: 28px 0;
+    display: grid;
+    align-content: center;
+    grid-template-columns: minmax(292px, 330px) 3fr;
+    column-gap: 6.7%;
     height: 100%;
+  }
 
-    &__container {
-        padding: 28px 0;
-        display: grid;
-        align-content: center;
-        grid-template-columns: minmax(292px, 330px) 3fr;
-        column-gap: 6.7%;
-        height: 100%;
-    }
-
-    .user-info {
-        margin-top: 10px;
-    }
+  .user-info {
+    margin-top: 10px;
+  }
 }
 
 
 @media (max-width:1310px) {
-    .full-info {
-        &__container {
-            padding-left: 30px;
-            padding-right: 30px;
-        }
+  .full-info {
+    &__container {
+      padding-left: 30px;
+      padding-right: 30px;
     }
+  }
 }

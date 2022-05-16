@@ -2,6 +2,7 @@
 
 $blue: #0064EB;
 $hoverBlue: #217BF4;
+$dark-white: #F9F9F9;
 
 @mixin font($family, $style, $weight, $size, $line-height) {
   font-family: $family;
@@ -20,7 +21,7 @@ $hoverBlue: #217BF4;
 }
 
 .main {
-  background-color: #F9F9F9;
+  background-color: $dark-white;
 }
 
 .container {
@@ -29,7 +30,6 @@ $hoverBlue: #217BF4;
   box-sizing: border-box;
 }
 
-
 .link {
   color: $blue;
 
@@ -37,7 +37,6 @@ $hoverBlue: #217BF4;
     color: $hoverBlue;
   }
 }
-
 
 .text {
   @include font('Inter', normal, 400, 16px, 19px);

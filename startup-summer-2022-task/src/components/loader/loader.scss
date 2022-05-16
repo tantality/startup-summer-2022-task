@@ -3,28 +3,28 @@ $light-gray: #ebe9e9;
 
 .loader {
 
-    height: 100%;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    min-height: 520px;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  min-height: 520px;
 
-    &__content {
-        border: 15px solid $light-gray;
-        border-top: 15px solid $blue;
-        border-radius: 50%;
-        width: 120px;
-        height: 120px;
-        animation: spin 1.4s linear infinite;
+  &__content {
+    border: 15px solid $light-gray;
+    border-top: 15px solid $blue;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1.4s linear infinite;
 
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
 
-            100% {
-                transform: rotate(360deg);
-            }
-        }
+      100% {
+        transform: rotate(360deg);
+      }
     }
+  }
 }
