@@ -17,8 +17,8 @@ export const ShortMessage = ({ contentInd }) => {
   return (
     <section className="short-message">
       <div className="container short-message__container">
-        <img className='short-message__icon' src={process.env.PUBLIC_URL + icon} alt={alt} />
-        <p className='short-message__text'>{text}</p>
+        <img className="short-message__icon" src={process.env.PUBLIC_URL + icon} alt={alt} />
+        <p className="short-message__text">{text}</p>
       </div>
     </section>
   );

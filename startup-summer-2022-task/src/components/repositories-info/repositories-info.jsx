@@ -72,8 +72,8 @@ export const RepositoriesInfo = ({ numberRepos, appSearchQuery }) => {
           {reposInfoLoading === false && reposInfo &&
 
             reposInfo.map(repo => {
-              return <div className='repositories-info__repository repository' key={repo.name}>
-                <h2 className='repository__title'><a className='repository__link link' href={repo.html_url} target="_blank" rel="noreferrer">{repo.name}</a></h2>
+              return <div className="repositories-info__repository repository" key={repo.name}>
+                <h2 className="repository__title"><a className="repository__link link" href={repo.html_url} target="_blank" rel="noreferrer">{repo.name}</a></h2>
                 {repo.description && <div className="repository__description text">{repo.description}</div>}
               </div>
             })
@@ -92,7 +92,7 @@ export const RepositoriesInfo = ({ numberRepos, appSearchQuery }) => {
               nextClassName={"control-panel__next next arrow"}
               nextLinkClassName={"next__link"}
               breakLabel="..."
-              breakClassName={'control-panel__break break'}
+              breakClassName={"control-panel__break break"}
               breakLinkClassName={"break__link"}
               nextLabel=""
               onPageChange={handlePageClick}

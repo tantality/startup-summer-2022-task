@@ -37,18 +37,18 @@ export const UserInfo = (props) => {
 
   return (
     <section className="user-info">
-      <img className='user-info__img' src={avatar_url} alt={name} />
+      <img className="user-info__img" src={avatar_url} alt={name} />
       <h2 className="user-info__name">{name}</h2>
       <div className="user-info__username username">
-        <a className='username__link link' href={html_url} target="_blank" rel="noreferrer">{login}</a>
+        <a className="username__link link" href={html_url} target="_blank" rel="noreferrer">{login}</a>
       </div>
       <div className="user-info__additional additional">
         <div className="additional__followers followers">
-          <img className='followers__icon' src={process.env.PUBLIC_URL + 'icons/followers.svg'} alt="followers-icon" />
+          <img className="followers__icon" src={process.env.PUBLIC_URL + "icons/followers.svg"} alt="followers-icon" />
           <div className="text followers__text">{getNumberOfPeople(followers)} followers</div>
         </div>
         <div className="additional__following">
-          <img className='following__icon' src={process.env.PUBLIC_URL + 'icons/member.svg'} alt="member-icon" />
+          <img className="following__icon" src={process.env.PUBLIC_URL + "icons/member.svg"} alt="member-icon" />
           <div className="text following__text">{getNumberOfPeople(following)} following</div>
         </div>
       </div>
