@@ -4,9 +4,10 @@ $light-gray: #ebe9e9;
 .loader {
 
     height: 100%;
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
+    min-height: 520px;
 
     &__content {
         border: 15px solid $light-gray;

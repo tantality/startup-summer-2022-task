@@ -5,8 +5,10 @@
     align-items: $align-items;
 }
 
+$blue: #0064EB;
+
 .header {
-    background: #0064EB;
+    background: $blue;
 
     &__container {
         padding: 16px 0;

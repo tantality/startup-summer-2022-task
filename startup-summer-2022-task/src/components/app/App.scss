@@ -1,6 +1,7 @@
 @import url('../../reset.scss');
 
 $blue: #0064EB;
+$hoverBlue: #217BF4;
 
 @mixin font($family, $style, $weight, $size, $line-height) {
   font-family: $family;
@@ -33,7 +34,7 @@ $blue: #0064EB;
   color: $blue;
 
   &:hover {
-    color: #217BF4;
+    color: $hoverBlue;
   }
 }
 
