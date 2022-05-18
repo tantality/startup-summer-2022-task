@@ -144,14 +144,14 @@ $gray: #808080;
 
     &__title {
       margin-bottom: 29px;
-      font-size: 26px;
+      font-size: 24.5px;
     }
 
     .repository {
       padding: 22px 27px;
 
       &__title {
-        font-size: 22px;
+        font-size: 21px;
       }
 
       &__description {
@@ -183,7 +183,7 @@ $gray: #808080;
     }
 
     &__title {
-      font-size: 24px;
+      font-size: 23.5px;
     }
 
     .repository {
@@ -208,7 +208,7 @@ $gray: #808080;
 
     &__content {
       grid-auto-rows: minmax(100px, max-content);
-      min-height: 470px;
+      min-height: 460px;
     }
 
     .pagination {
@@ -225,7 +225,7 @@ $gray: #808080;
     }
 
     &__title {
-      font-size: 22px;
+      font-size: 20px;
       margin-bottom: 25px;
     }
 
@@ -233,11 +233,12 @@ $gray: #808080;
       padding: 13px 20px;
 
       &__title {
-        font-size: 18px;
+        line-height: 21px;
+        font-size: 17px;
       }
 
       &__description {
-        font-size: 14px;
+        font-size: 13.5px;
         margin-top: 8px;
       }
     }
@@ -290,17 +291,12 @@ $gray: #808080;
     }
 
     &__title {
-      font-size: 21px;
       margin-bottom: 22px;
     }
 
     .repository {
-      &__title {
-        font-size: 16.5px;
-      }
-
       &__description {
-        margin-top: 4px;
+        margin-top: 6px;
       }
     }
 

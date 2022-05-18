@@ -30,8 +30,25 @@
       padding-bottom: 28px;
       grid-template-columns: 1fr;
       grid-template-rows: auto auto;
-      row-gap: 70px;
-      column-gap: 6.7%;
+      row-gap: 60px;
+    }
+  }
+}
+
+
+@media (max-width:650px) {
+  .full-info {
+    &__container {
+      row-gap: 40px;
+    }
+  }
+}
+
+
+@media (max-width:420px) {
+  .full-info {
+    &__container {
+      row-gap: 30px;
     }
   }
 }

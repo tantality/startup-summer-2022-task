@@ -12,6 +12,8 @@
   grid-template-rows: repeat(4, min-content);
 
   .username__link {
+    padding: 4px;
+    padding-left: 0;
     @include font('Inter', normal, 400, 18px, 22px);
   }
 
@@ -57,9 +59,124 @@
 }
 
 
-
 @media (max-width:1100px) {
   .user-info {
     justify-items: center;
+
+    &__username {
+      padding-left: 4px;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+
+@media (max-width:650px) {
+  .user-info {
+    &__name {
+      font-size: 26px;
+    }
+
+    &__img {
+      width: 280px;
+    }
+
+    .additional {
+
+      .followers__text,
+      .following__text {
+        font-size: 15.5px;
+        line-height: 130%;
+      }
+    }
+  }
+}
+
+
+@media (max-width:510px) {
+  .user-info {
+    &__name {
+      font-size: 24px;
+    }
+
+    &__img {
+      width: 260px;
+    }
+
+    .additional {
+
+      .followers__text,
+      .following__text {
+        font-size: 15px;
+        line-height: 120%;
+      }
+
+      .following__icon {
+        margin-top: -2px;
+      }
+    }
+  }
+}
+
+
+
+@media (max-width:510px) {
+  .user-info {
+    &__img {
+      width: 240px;
+    }
+  }
+}
+
+
+
+@media (max-width:420px) {
+  .user-info {
+    &__name {
+      margin-top: 22px;
+      font-size: 24px;
+    }
+
+    &__username {
+      margin-bottom: 10px;
+    }
+
+    .additional {
+
+      .followers__text,
+      .following__text {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+
+@media (max-width:360px) {
+  .user-info {
+
+    .additional {
+      column-gap: 12px;
+
+      &__following,
+      &__followers {
+        column-gap: 5px;
+      }
+
+      .followers__text,
+      .following__text {
+        font-size: 13.5px;
+      }
+
+      .followers__icon,
+      .following__icon {
+        width: 20px;
+        height: 20px;
+      }
+
+      .following__icon {
+        margin-top: 0;
+      }
+    }
   }
 }
