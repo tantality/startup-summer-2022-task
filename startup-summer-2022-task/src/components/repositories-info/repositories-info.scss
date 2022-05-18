@@ -11,7 +11,7 @@ $gray: #808080;
 
 .repositories-info {
   .pagination {
-    margin-top: 24px;
+    margin-top: 18px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -45,8 +45,6 @@ $gray: #808080;
           padding: 2px 6px;
           color: white;
         }
-
-
       }
 
       .previous,
@@ -96,26 +94,25 @@ $gray: #808080;
     }
   }
 
-
   &__container {
     padding: 0;
     display: grid;
-    grid-template-rows: min-content auto min-content;
+    grid-template-rows: min-content min-content min-content;
   }
 
   &__content {
     display: grid;
-    row-gap: 24px;
+    row-gap: 22px;
     grid-auto-flow: row;
     grid-auto-rows: minmax(112px, max-content);
     align-content: flex-start;
-    min-height: 540px;
+    min-height: 534px;
   }
 
   &__title {
     @include font('Inter', normal, 600, 32px, 130%);
     color: black;
-    margin-bottom: 29px;
+    margin-bottom: 25px;
   }
 
   .repository {
@@ -131,6 +128,193 @@ $gray: #808080;
 
     &__description {
       margin-top: 16px;
+    }
+  }
+}
+
+
+@media (max-width:1100px) {
+  .repositories-info {
+    padding: 0 7%;
+
+    &__content {
+      row-gap: 24px;
+      grid-auto-rows: minmax(108px, max-content);
+    }
+
+    &__title {
+      margin-bottom: 29px;
+      font-size: 26px;
+    }
+
+    .repository {
+      padding: 22px 27px;
+
+      &__title {
+        font-size: 22px;
+      }
+
+      &__description {
+        margin-top: 14px;
+      }
+    }
+
+    .pagination {
+      margin-top: 20px;
+    }
+  }
+}
+
+
+@media (max-width:800px) {
+  .repositories-info {
+    padding: 0 2%;
+  }
+}
+
+
+@media (max-width:650px) {
+  .repositories-info {
+    padding: 0;
+
+    &__content {
+      grid-auto-rows: minmax(100px, auto);
+      min-height: 490px;
+    }
+
+    &__title {
+      font-size: 24px;
+    }
+
+    .repository {
+      word-break: break-all;
+      padding: 20px 24px;
+
+      &__title {
+        font-size: 20px;
+      }
+
+      &__description {
+        font-size: 15.5px;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+
+@media (max-width:600px) {
+  .repositories-info {
+
+    &__content {
+      grid-auto-rows: minmax(100px, max-content);
+      min-height: 470px;
+    }
+
+    .pagination {
+      margin-top: 24px;
+    }
+  }
+}
+
+
+@media (max-width:510px) {
+  .repositories-info {
+    &__content {
+      row-gap: 20px;
+    }
+
+    &__title {
+      font-size: 22px;
+      margin-bottom: 25px;
+    }
+
+    .repository {
+      padding: 13px 20px;
+
+      &__title {
+        font-size: 18px;
+      }
+
+      &__description {
+        font-size: 14px;
+        margin-top: 8px;
+      }
+    }
+
+    .pagination {
+      line-height: 19px;
+      margin-top: 10px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      row-gap: 10px;
+      font-size: 12.5px;
+
+      .items-info {
+        font-size: 12px;
+        align-self: flex-start;
+      }
+
+      .control-panel {
+        column-gap: 15px;
+
+        &__page {
+          padding: 3px;
+
+          &_active {
+            padding: 3px 6px;
+          }
+        }
+
+        .previous,
+        .next {
+          margin-top: 1px;
+
+          &__link {
+            background-size: 16px 16px;
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width:420px) {
+  .repositories-info {
+    &__content {
+      row-gap: 16px;
+    }
+
+    &__title {
+      font-size: 21px;
+      margin-bottom: 22px;
+    }
+
+    .repository {
+      &__title {
+        font-size: 16.5px;
+      }
+
+      &__description {
+        margin-top: 4px;
+      }
+    }
+
+    .pagination {
+      row-gap: 10px;
+      font-size: 11.5px;
+
+      .items-info {
+        font-size: 11px;
+      }
+
+      .control-panel {
+        column-gap: 12px;
+      }
     }
   }
 }

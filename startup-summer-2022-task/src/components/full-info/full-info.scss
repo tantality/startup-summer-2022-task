@@ -1,8 +1,15 @@
 .full-info {
   height: 100%;
 
+  .short-message {
+    &__container {
+      padding-bottom: 30px;
+    }
+  }
+
   &__container {
-    padding: 28px 0;
+    padding-top: 24px;
+    padding-bottom: 24px;
     display: grid;
     align-content: center;
     grid-template-columns: minmax(292px, 330px) 3fr;
@@ -16,11 +23,15 @@
 }
 
 
-@media (max-width:1310px) {
+@media (max-width:1100px) {
   .full-info {
     &__container {
-      padding-left: 30px;
-      padding-right: 30px;
+      padding-top: 28px;
+      padding-bottom: 28px;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      row-gap: 70px;
+      column-gap: 6.7%;
     }
   }
 }

@@ -42,3 +42,19 @@ $dark-white: #F9F9F9;
   @include font('Inter', normal, 400, 16px, 19px);
   color: black;
 }
+
+
+@media (max-width:1310px) {
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+
+@media (max-width:400px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

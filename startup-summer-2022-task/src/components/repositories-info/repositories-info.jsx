@@ -18,6 +18,21 @@ export const RepositoriesInfo = ({ numberRepos, appSearchQuery }) => {
   const [reposInfoLoading, setReposInfoLoading] = useState('');
   const [reposInfo, setReposInfo] = useState('');
 
+  const breakpoint = window.matchMedia('(max-width: 1100px)');
+  const [isBiggerThanBreakpoint, setIsBiggerThanBreakpoint] = useState(breakpoint.matches);
+
+
+  useEffect(() => {
+    breakpoint.addEventListener('change', onWindowResize);
+    onWindowResize(breakpoint);
+    return () => breakpoint.removeEventListener('change', onWindowResize);
+  }, []);
+
+
+  const onWindowResize = (e) => {
+    setIsBiggerThanBreakpoint(breakpoint.matches);
+  };
+
 
   useEffect(() => {
     getReposList(appSearchQuery, itemsPerPage, currentPage);
@@ -63,11 +78,16 @@ export const RepositoriesInfo = ({ numberRepos, appSearchQuery }) => {
   };
 
 
+  const setMinHeight = () => {
+    if (pageCount === 1 && isBiggerThanBreakpoint) return { minHeight: 'auto' };
+  };
+
+
   return (
     <section className="repositories-info">
       <div className="container repositories-info__container">
         <h1 className="repositories-info__title">Repositories ({numberRepos})</h1>
-        <div className="repositories-info__content">
+        <div className="repositories-info__content" style={setMinHeight()} >
           {(reposInfoLoading || reposInfoLoading === '') && <Loader />}
           {reposInfoLoading === false && reposInfo &&
 

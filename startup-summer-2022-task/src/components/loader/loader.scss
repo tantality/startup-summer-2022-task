@@ -28,3 +28,23 @@ $light-gray: #ebe9e9;
     }
   }
 }
+
+@media (max-width:1100px) {
+  .loader {
+    min-height: 490px;
+  }
+}
+
+
+@media (max-width:600px) {
+  .loader {
+    min-height: 450px;
+
+    &__content {
+      border: 12px solid $light-gray;
+      border-top: 12px solid $blue;
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
