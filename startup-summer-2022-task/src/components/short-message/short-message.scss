@@ -3,7 +3,7 @@ $gray: #808080;
 .short-message {
 
   height: 100%;
-  min-height: 660px;
+  min-height: 650px;
 
   &__icon {
     align-self: flex-end;
@@ -27,5 +27,94 @@ $gray: #808080;
     justify-items: center;
     grid-row-gap: 24px;
     height: 100%;
+  }
+}
+
+
+@media (max-width:1100px) {
+  .short-message {
+    min-height: auto;
+    padding: 15px 0;
+
+    &__icon {
+      width: 100px;
+      height: 100px;
+    }
+
+    &__text {
+      font-size: 20px;
+      line-height: 140%;
+    }
+
+    &__container {
+      grid-template-rows: repeat(2, min-content);
+      justify-items: center;
+      align-content: center;
+      grid-row-gap: 10px;
+    }
+  }
+}
+
+
+@media (max-width:800px) {
+  .short-message {
+    &__icon {
+      width: 95px;
+      height: 95px;
+    }
+
+    &__text {
+      font-size: 19px;
+      line-height: 120%;
+    }
+  }
+}
+
+
+@media (max-width:650px) {
+  .short-message {
+
+    &__icon {
+      width: 90px;
+      height: 90px;
+    }
+  }
+}
+
+
+@media (max-width:510px) {
+  .short-message {
+    &__container {
+      grid-row-gap: 7px;
+    }
+
+    &__icon {
+      width: 85px;
+      height: 85px;
+    }
+
+    &__text {
+      font-size: 18px;
+    }
+  }
+}
+
+
+@media (max-width:420px) {
+  .short-message {
+    padding: 25px 0;
+
+    &__container {
+      grid-row-gap: 5px;
+    }
+
+    &__icon {
+      width: 80px;
+      height: 80px;
+    }
+
+    &__text {
+      font-size: 17px;
+    }
   }
 }

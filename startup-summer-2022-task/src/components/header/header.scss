@@ -110,15 +110,18 @@ $blue: #0064EB;
 }
 
 
-@media (max-width:400px) {
+@media (max-width:420px) {
   .header {
     .search-bar {
       &__icon {
+        left: 10px;
         height: 22px;
         width: 22px;
       }
 
       &__field {
+        padding-left: 40px;
+        padding-right: 15px;
         height: 35px;
       }
 
